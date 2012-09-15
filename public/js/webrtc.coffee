@@ -1,4 +1,4 @@
-class RecorderWebRTC
+class WebRTCRecorder
   localVideo: null
   localStream: null
   localStreamRecorder: null

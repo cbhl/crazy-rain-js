@@ -1,8 +1,9 @@
 class Instaoke
   startRecordingButton: null
   stopRecordingButton: null
+  recorder: null
 
-  constructor: () ->
+  constructor: (@recorder) ->
     @startRecordingButton = document.getElementById("start-recording-button")
     @stopRecordingButton = document.getElementById("stop-recording-button")
   startRecording: () =>
@@ -11,7 +12,8 @@ class Instaoke
     console.log("Stopping stream...")
 
 window.initInstaoke = () ->
-  window.instaoke = new Instaoke()
+  recorder = new WamiRecorder()
+  window.instaoke = new Instaoke(recoder)
   $('#start-recording-button').click(window.instaoke.startRecording)
   $('#stop-recording-button').click(window.instaoke.stopRecording)
 
